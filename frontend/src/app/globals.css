@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Default: Nature Light */
+  --bg: #F9F8F3;
+  --surface: #FFFFFF;
+  --surface-elevated: #F2F0E6;
+  --surface-card: #FFFFFF;
+  --primary: #2D5A27; /* Forest Deep Green */
+  --primary-hover: #1E3F1A;
+  --primary-light: #EBF3E8;
+  --secondary: #587D52; /* Sage Olive */
+  --secondary-hover: #43633E;
+  --accent: #D4A373; /* Warm Ochre */
+  --accent-light: #FAEDCD;
+  --text: #1B2A1A;
+  --text-muted: #5C6E5B;
+  --border: #E2DFD2;
+  --success: #2E7D32;
+  --warning: #ED6C02;
+  --danger: #D32F2F;
+  --shadow-color: rgba(45, 90, 39, 0.08);
+  --glow-color: rgba(45, 90, 39, 0.15);
+  --bg-pattern-opacity: 0.7;
+}
+
+/* 1. Nature Light */
+[data-theme="nature"][data-mode="light"] {
+  --bg: #F9F8F3;
+  --surface: #FFFFFF;
+  --surface-elevated: #F2F0E6;
+  --surface-card: #FFFFFF;
+  --primary: #2D5A27;
+  --primary-hover: #1E3F1A;
+  --primary-light: #EBF3E8;
+  --secondary: #587D52;
+  --secondary-hover: #43633E;
+  --accent: #D4A373;
+  --accent-light: #FAEDCD;
+  --text: #1B2A1A;
+  --text-muted: #5C6E5B;
+  --border: #E2DFD2;
+  --success: #2E7D32;
+  --warning: #ED6C02;
+  --danger: #D32F2F;
+  --shadow-color: rgba(45, 90, 39, 0.08);
+  --glow-color: rgba(45, 90, 39, 0.15);
+}
+
+/* 2. Nature Dark */
+[data-theme="nature"][data-mode="dark"] {
+  --bg: #121A13; /* Deep Forest Moss */
+  --surface: #1B261D;
+  --surface-elevated: #243327;
+  --surface-card: #18221A;
+  --primary: #52B788; /* Sage Emerald */
+  --primary-hover: #74C69D;
+  --primary-light: #1E3324;
+  --secondary: #74A57F;
+  --secondary-hover: #95C6A0;
+  --accent: #DDA15E; /* Moonlit Amber */
+  --accent-light: #3D2C1A;
+  --text: #F0F7F2;
+  --text-muted: #9BB3A0;
+  --border: #2C3E30;
+  --success: #4CAF50;
+  --warning: #FFA726;
+  --danger: #EF5350;
+  --shadow-color: rgba(0, 0, 0, 0.45);
+  --glow-color: rgba(82, 183, 136, 0.25);
+}
+
+/* 3. Galaxy Light */
+[data-theme="galaxy"][data-mode="light"] {
+  --bg: #F6F7FD; /* Soft Lavender White */
+  --surface: #FFFFFF;
+  --surface-elevated: #EEEFFC;
+  --surface-card: #FFFFFF;
+  --primary: #5E5CE6; /* Cosmic Indigo */
+  --primary-hover: #4745D0;
+  --primary-light: #EEEDFD;
+  --secondary: #8E8CF8;
+  --secondary-hover: #7472E8;
+  --accent: #FF6492; /* Starlight Coral */
+  --accent-light: #FFEBF1;
+  --text: #1E1B38;
+  --text-muted: #625F82;
+  --border: #DCDDF7;
+  --success: #00B894;
+  --warning: #F39C12;
+  --danger: #E74C3C;
+  --shadow-color: rgba(94, 92, 230, 0.09);
+  --glow-color: rgba(94, 92, 230, 0.18);
+}
+
+/* 4. Galaxy Dark */
+[data-theme="galaxy"][data-mode="dark"] {
+  --bg: #0C0B1E; /* Midnight Cosmic Space */
+  --surface: #14132E;
+  --surface-elevated: #1D1C3F;
+  --surface-card: #161533;
+  --primary: #8280FF; /* Nebula Purple */
+  --primary-hover: #A1A0FF;
+  --primary-light: #242254;
+  --secondary: #B197FC;
+  --secondary-hover: #CCAFFF;
+  --accent: #FF7597; /* Cosmic Magenta */
+  --accent-light: #421B27;
+  --text: #F3F2FF;
+  --text-muted: #9F9CBF;
+  --border: #292754;
+  --success: #2ECC71;
+  --warning: #F1C40F;
+  --danger: #E74C3C;
+  --shadow-color: rgba(0, 0, 0, 0.6);
+  --glow-color: rgba(130, 128, 255, 0.28);
+}
+
+/* Background Intensity Overrides */
+[data-intensity="subtle"] { --bg-pattern-opacity: 0.35; }
+[data-intensity="balanced"] { --bg-pattern-opacity: 0.70; }
+[data-intensity="immersive"] { --bg-pattern-opacity: 1.00; }
+[data-distraction-free="true"] { --bg-pattern-opacity: 0 !important; }
+
+/* Custom Background Patterns */
+.bg-canvas-container {
+  background-color: var(--bg);
+  position: relative;
+  min-height: 100vh;
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Nature Botanical / Forest overlay */
+.theme-pattern-nature-forest {
+  background-image: radial-gradient(circle at 15% 15%, rgba(45, 90, 39, 0.06) 0%, transparent 40%),
+                    radial-gradient(circle at 85% 75%, rgba(88, 125, 82, 0.05) 0%, transparent 45%);
+}
+
+.theme-pattern-nature-mountains {
+  background-image: linear-gradient(135deg, rgba(45, 90, 39, 0.04) 25%, transparent 25%), 
+                    linear-gradient(225deg, rgba(88, 125, 82, 0.04) 25%, transparent 25%);
+  background-size: 60px 60px;
+}
+
+/* Galaxy Nebula / Stars overlay */
+.theme-pattern-galaxy-nebula {
+  background-image: radial-gradient(circle at 20% 20%, rgba(94, 92, 230, 0.12) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, rgba(255, 100, 146, 0.08) 0%, transparent 50%);
+}
+
+.theme-pattern-galaxy-starfield {
+  background-image: radial-gradient(1px 1px at 20px 30px, var(--primary) 50%, transparent),
+                    radial-gradient(1.5px 1.5px at 100px 150px, var(--accent) 50%, transparent),
+                    radial-gradient(1px 1px at 220px 80px, #ffffff 50%, transparent);
+  background-size: 250px 250px;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Interactive transitions */
+button, a, input, select, textarea {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
